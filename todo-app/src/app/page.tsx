@@ -8,12 +8,11 @@ interface Todo {
   id: number;
   text: string;
   completed: boolean;
-  
+
 }
 
 export default function Home() {
   const [todos, setTodos] = useState<Todo[]>([]);
-
   const addTodo = (text: string) => {
     const newTodo: Todo = {
       id: Date.now(),
@@ -22,6 +21,7 @@ export default function Home() {
     };
     setTodos([...todos, newTodo]);
   };
+
 
   const toggleTodo = (id: number) => {
     setTodos(todos.map(todo =>
